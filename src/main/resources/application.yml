@@ -2,7 +2,7 @@
 
 spring:
   redis:
-    host: 10.10.11.58
+    host: 10.10.11.11
     port: 6379
     lettuce:
       pool:
@@ -13,7 +13,7 @@ spring:
       time-to-live: 3600s
       blackdata:
         ttl: 5s
-      use-key-prefix: false #Ä¬ÈÏÊÇtrue£¬»áÔÚkeyµÄÇ°Ãæ¼ÓÉÏcache-name::
-      cache-null-values: false  #Ä¬ÈÏÊÇtrue£¬»áÔÚkeyµÄÇ°Ãæ¼ÓÉÏcache-name::
+      use-key-prefix: false #Ä¬ï¿½ï¿½ï¿½ï¿½trueï¿½ï¿½ï¿½ï¿½ï¿½ï¿½keyï¿½ï¿½Ç°ï¿½ï¿½ï¿½ï¿½ï¿½cache-name::
+      cache-null-values: false  #Ä¬ï¿½ï¿½ï¿½ï¿½trueï¿½ï¿½ï¿½ï¿½ï¿½ï¿½keyï¿½ï¿½Ç°ï¿½ï¿½ï¿½ï¿½ï¿½cache-name::
     cache-names:
       - blackdata
