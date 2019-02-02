@@ -5,11 +5,11 @@ import org.springframework.cache.annotation.Cacheable;
 import org.springframework.stereotype.Service;
 
 @Service
-@CacheConfig(cacheNames="blackdata11")
+@CacheConfig(cacheNames="my-cache-name")
 public class CacheData {
 
-    @Cacheable(key = "'aaaa'")
-    public Integer getData(){
+    @Cacheable(key = "'cccc'", value = "kkkk")
+    public Integer getData(Long id){
         return 111;
     }
 }

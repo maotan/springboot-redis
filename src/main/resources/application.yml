@@ -11,9 +11,17 @@ spring:
   cache:
     redis:
       time-to-live: 3600s
-      blackdata:
-        ttl: 5s
-      use-key-prefix: false #Ĭ����true������key��ǰ�����cache-name::
-      cache-null-values: false  #Ĭ����true������key��ǰ�����cache-name::
+      my-cache-name:
+        ttl: 10s
+      use-key-prefix: true      #默认true  缓存数据key是否使用前缀cache-name::
+      cache-null-values: false  #默认是false，是否缓存null数据
     cache-names:
-      - blackdata
+      - my-cache-name
+
+
+#缓存的名称集合，多个采用逗号分割
+#spring.cache.cache-names=
+#缓存的类型，官方提供了很多，这里我们填写redis
+#spring.cache.type=
+#缓存数据key的前缀，在上面的配置为true时有效，
+#spring.cache.redis.key-prefix=

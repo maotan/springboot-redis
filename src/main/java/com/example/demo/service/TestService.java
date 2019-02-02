@@ -1,11 +1,9 @@
 package com.example.demo.service;
 
 import com.example.demo.Cache.CacheData;
-import com.example.demo.Lock.DistributeLock;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.data.redis.core.StringRedisTemplate;
 import org.springframework.stereotype.Service;
 
@@ -17,6 +15,7 @@ public class TestService {
 
     @Autowired
     private CacheData cacheData;
+
     //@Autowired
     //private RedisTemplate redisTemplate;
 
@@ -39,7 +38,7 @@ public class TestService {
             logger.info("222222");
             return false;
         });*/
-        Integer aa = cacheData.getData();
+        Integer aa = cacheData.getData(6L);
         System.out.println(aa);
     }
 }
