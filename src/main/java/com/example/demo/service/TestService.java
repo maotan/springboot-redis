@@ -4,8 +4,11 @@ import com.example.demo.Cache.CacheData;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.data.redis.core.StringRedisTemplate;
 import org.springframework.stereotype.Service;
+
+import java.util.concurrent.TimeUnit;
 
 @Service
 public class TestService {
@@ -16,8 +19,8 @@ public class TestService {
     @Autowired
     private CacheData cacheData;
 
-    //@Autowired
-    //private RedisTemplate redisTemplate;
+    @Autowired
+    private RedisTemplate redisTemplate;
 
     public void test(){
         /*DistributeLock<Boolean> lock = new DistributeLock<>(stringRedisTemplate,
@@ -38,7 +41,13 @@ public class TestService {
             logger.info("222222");
             return false;
         });*/
-        Integer aa = cacheData.getData(6L);
+        Integer bb = cacheData.getData(6L);
+        Integer aa = cacheData.cacheData(6L);
         System.out.println(aa);
+
+        //redisTemplate.opsForHash().put("aaaa", "bbbb", "cccc");
+        //System.out.println(redisTemplate.opsForHash().get("aaaa", "bbbb"));
+        //stringRedisTemplate.opsForHash().put("myhash", "kkk1", "22222");
+        //stringRedisTemplate.expire("myhash", 100, TimeUnit.SECONDS);
     }
 }

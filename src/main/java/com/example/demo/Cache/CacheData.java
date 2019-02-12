@@ -5,11 +5,18 @@ import org.springframework.cache.annotation.Cacheable;
 import org.springframework.stereotype.Service;
 
 @Service
-@CacheConfig(cacheNames="my-cache-name")
+@CacheConfig(cacheNames="cache-key")
 public class CacheData {
 
-    @Cacheable(key = "'cccc'", value = "kkkk")
+    @Cacheable(key = "'eeee'+#id")
     public Integer getData(Long id){
+        return 111;
+    }
+
+
+    // Cacheable的value会覆盖 cacheConfig的 cacheNames
+    @Cacheable(key = "'eeee'+#id", value = "my-cache-name")
+    public Integer cacheData(Long id){
         return 111;
     }
 }
