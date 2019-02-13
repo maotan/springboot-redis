@@ -13,11 +13,15 @@ spring:
       time-to-live: 3600s
       my-cache-name:
         ttl: 100s
-      use-key-prefix: true      #默认true  缓存数据key是否使用前缀cache-name::
+      use-key-prefix: false      #默认true  缓存数据key是否使用前缀cache-name::
       cache-null-values: false  #默认是false，是否缓存null数据
     cache-names:
       - my-cache-name
 
+
+local:
+  host: 127.0.0.1
+  port: 8080
 
 #缓存的名称集合，多个采用逗号分割
 #spring.cache.cache-names=

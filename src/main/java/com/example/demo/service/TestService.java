@@ -1,5 +1,7 @@
 package com.example.demo.service;
 
+import com.example.demo.Bean.BeanTest;
+import com.example.demo.Bean.Student;
 import com.example.demo.Cache.CacheData;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -22,6 +24,9 @@ public class TestService {
     @Autowired
     private RedisTemplate redisTemplate;
 
+    @Autowired
+    private Student student;
+
     public void test(){
         /*DistributeLock<Boolean> lock = new DistributeLock<>(stringRedisTemplate,
                 "test-lock", 1000,
@@ -41,13 +46,15 @@ public class TestService {
             logger.info("222222");
             return false;
         });*/
-        Integer bb = cacheData.getData(6L);
-        Integer aa = cacheData.cacheData(6L);
-        System.out.println(aa);
+        //Integer bb = cacheData.getData(6L);
+        //Integer aa = cacheData.cacheData(6L);
+        //System.out.println(aa);
 
         //redisTemplate.opsForHash().put("aaaa", "bbbb", "cccc");
         //System.out.println(redisTemplate.opsForHash().get("aaaa", "bbbb"));
         //stringRedisTemplate.opsForHash().put("myhash", "kkk1", "22222");
         //stringRedisTemplate.expire("myhash", 100, TimeUnit.SECONDS);
+
+        System.out.println(student.getId());
     }
 }

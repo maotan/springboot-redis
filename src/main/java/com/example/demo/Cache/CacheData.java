@@ -15,7 +15,7 @@ public class CacheData {
 
 
     // Cacheable的value会覆盖 cacheConfig的 cacheNames
-    @Cacheable(key = "'eeee'+#id", value = "my-cache-name")
+    @Cacheable(key = "'ffff:'+#id", value = "my-cache-name")
     public Integer cacheData(Long id){
         return 111;
     }
