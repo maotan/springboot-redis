@@ -47,7 +47,7 @@ public class TestService {
             return false;
         });*/
         //Integer bb = cacheData.getData(6L);
-        //Integer aa = cacheData.cacheData(6L);
+        Integer aa = cacheData.cacheData(6L);
         //System.out.println(aa);
 
         //redisTemplate.opsForHash().put("aaaa", "bbbb", "cccc");
@@ -55,6 +55,5 @@ public class TestService {
         //stringRedisTemplate.opsForHash().put("myhash", "kkk1", "22222");
         //stringRedisTemplate.expire("myhash", 100, TimeUnit.SECONDS);
 
-        System.out.println(student.getId());
     }
 }

@@ -14,7 +14,11 @@ public class CacheData {
     }
 
 
-    // Cacheable的value会覆盖 cacheConfig的 cacheNames
+    /** Cacheable的value会覆盖 cacheConfig的 cacheNames
+     *  cacheNames仅仅用来控制key的前缀（如果前缀开户）以及缓存时间
+     * @param id
+     * @return
+     */
     @Cacheable(key = "'ffff:'+#id", value = "my-cache-name")
     public Integer cacheData(Long id){
         return 111;

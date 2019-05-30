@@ -1,8 +1,9 @@
-
+server:
+  port: 8081
 
 spring:
   redis:
-    host: 10.10.11.11
+    host: 10.10.11.58
     port: 6379
     lettuce:
       pool:
